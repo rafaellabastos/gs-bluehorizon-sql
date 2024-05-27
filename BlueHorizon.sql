@@ -67,3 +67,22 @@ create table Situacao_Praia(
     nivelsujeira_praia number(5),
     cidade_praia varchar(50)
 );
+
+---Inserção das chaves estrangeiras
+alter table Voluntario_Pessoa
+add foreign key (id_end) references Voluntario_Endereco(id_end);
+
+alter table Voluntario_Pessoa
+add foreign key (id_perfil) references Voluntario_Perfil(id_perfil);
+
+alter table Recebimento_Lixo
+add foreign key (cpf_pessoa) references Voluntario_Pessoa(cpf_pessoa);
+
+alter table Recebimento_Lixo
+add foreign key (id_perfil) references Voluntario_Perfil(id_perfil);
+
+alter table Recebimento_Lixo
+add foreign key (id_ponto) references Pontos_Coleta(id_ponto);
+
+alter table Recebimento_Lixo
+add foreign key (id_lixo) references Tipos_Lixo(id_lixo);

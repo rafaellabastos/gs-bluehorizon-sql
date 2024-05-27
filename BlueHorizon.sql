@@ -12,3 +12,58 @@ drop table Pontos_Coleta cascade constraints;
 drop table Tipos_Lixos cascade constraints;
 drop table Recebimento_Lixo cascade constraints;
 drop table Situacao_Praia cascade constraints;
+
+---Criação das tabelas
+create table Voluntario_Endereco(
+    id_end char(3) primary key,
+    cep_end char(8),
+    rua_end varchar2(50),
+    num_end char(7),
+    bairro_end varchar2(50),
+    cidade_end varchar2(50),
+    estado_end char(2),
+    pais_end varchar2(50)
+);
+
+create table Voluntario_Perfil(
+    id_perfil char(3) primary key,
+    qntdlixoretirado_perfil number(10,2)
+);
+
+create table Voluntario_Pessoa(
+    cpf_pessoa char(11) primary key,
+    nome_pessoa varchar2(50),
+    dtnasc_pessoa date,
+    senha_pessoa char(15),
+    id_end char(3),
+    id_perfil char(3)
+);
+
+create table Pontos_Coleta(
+    id_ponto char(3) primary key,
+    nome_ponto varchar2(50),
+    estado_ponto char(2),
+    gerente_ponto varchar2(50)
+);
+
+create table Tipos_Lixo(
+    id_lixo char(3) primary key,
+    nome_lixo varchar2(50),
+    valorkg_lixo number(4,2)
+);
+
+create table Recebimento_Lixo(
+    id_recebimento char(3) primary key,
+    dt_recebimento date,
+    id_perfil char(3),
+    cpf_pessoa char(11),
+    id_ponto char(3),
+    id_lixo char(3)
+);
+
+create table Situacao_Praia(
+    id_praia char(3) primary key,
+    nome_praia varchar2(50),
+    nivelsujeira_praia number(5),
+    cidade_praia varchar(50)
+);

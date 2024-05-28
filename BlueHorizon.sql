@@ -31,7 +31,8 @@ create table Voluntario_Perfil(
 );
 
 create table Voluntario_Pessoa(
-    cpf_pessoa char(11) primary key,
+    id_pessoa char(3) primary key,
+    cpf_pessoa char(11),
     nome_pessoa varchar2(50),
     dtnasc_pessoa date,
     senha_pessoa char(15),
@@ -56,7 +57,7 @@ create table Recebimento_Lixo(
     id_recebimento char(3) primary key,
     dt_recebimento date,
     id_perfil char(3),
-    cpf_pessoa char(11),
+    id_pessoa char(11),
     id_ponto char(3),
     id_lixo char(3)
 );
@@ -76,7 +77,7 @@ alter table Voluntario_Pessoa
 add foreign key (id_perfil) references Voluntario_Perfil(id_perfil);
 
 alter table Recebimento_Lixo
-add foreign key (cpf_pessoa) references Voluntario_Pessoa(cpf_pessoa);
+add foreign key (id_pessoa) references Voluntario_Pessoa(id_pessoa);
 
 alter table Recebimento_Lixo
 add foreign key (id_perfil) references Voluntario_Perfil(id_perfil);

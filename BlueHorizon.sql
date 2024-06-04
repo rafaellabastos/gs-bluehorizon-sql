@@ -57,7 +57,7 @@ create table Recebimento_Lixo(
     id_recebimento char(3) primary key,
     dt_recebimento date,
     id_perfil char(3),
-    id_pessoa char(11),
+    id_pessoa char(3),
     id_ponto char(3),
     id_lixo char(3)
 );

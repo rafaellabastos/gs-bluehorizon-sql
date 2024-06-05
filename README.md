@@ -18,15 +18,12 @@
 <p></p><br>
 
 ## Pitch:
-...
+https://www.youtube.com/watch?v=P1d18IPrAPM
 <p></p><br>
 
 ## Imagem dos diagramas:
 ### Modelo Entidade-Relacionamento
-...
+![MER_BlueHorizon](https://github.com/rafaellabastos/gs-bluehorizon-sql/assets/85761347/ec56a175-3e9a-42e3-87c9-85c069727cb2)
 
 ### Diagrama de Classes
-...
-
-### Arquitetura da solução
-...
+![Diagrama_Classes_BlueHorizon](https://github.com/rafaellabastos/gs-bluehorizon-sql/assets/85761347/3f44a2ee-6697-405e-9347-1c70119a4399)
